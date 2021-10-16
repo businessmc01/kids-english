@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+svg {
+  display: block;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 63rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+.description__container, .video .video__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.navbar, .parceiros .parceiros__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu_barras, .navbar .social__container, .navbar .logo, .navbar__container, .hero__content .hero__container, .contact__content .social__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.description__container-left h2, .galery h2, .video h2, .parceiros h2, .contact__content h2 {
+  color: #1F8EED;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(1.3rem, 1.7rem, 2rem);
+  font-family: 'Fredoka One', cursive;
+}
+
+/*whatsapp*/
+.whatsapp-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  text-decoration: none;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 2px #888;
+          box-shadow: 1px 1px 2px #888;
+  z-index: 1000;
+}
+
+/*Header Style - Navbar and Logo*/
+.menu_barras {
+  width: 32px;
+  height: 32px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu_barras {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.menu_barras:hover div {
+  border-color: #EA0F07;
+}
+
+.menu_barras div {
+  width: 100%;
+  margin-top: 3px;
+  border-bottom: 5px solid #0c589a;
+  border-radius: 2px;
+}
+
+header {
+  margin-top: 1.5rem;
+}
+
+.navbar {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.navbar .social__container a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-left: .5rem;
+}
+
+.navbar .social__container .fa-youtube {
+  color: red;
+}
+
+.navbar .social__container .fa-instagram {
+  color: #f09433;
+}
+
+.navbar .social__container .fa-facebook {
+  color: #1877F2;
+}
+
+.navbar .logo img {
+  width: 100%;
+  height: auto;
+}
+
+.navbar .logo .cambridge-logo {
+  margin-left: 2rem;
+  max-width: 169px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 280px) {
+  .navbar .logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.navbar__container .close-btn {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.navbar__container--links {
+  display: block;
+  color: #1F8EED;
+  font-weight: bold;
+  margin: 0rem .5rem;
+  text-transform: uppercase;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+.navbar__container--links:hover, .navbar__container--links:focus {
+  color: #EA0F07;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    position: fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #4ea6f1;
+    height: 120vh;
+    width: 70vw;
+    left: 100%;
+    top: -1rem;
+    padding: 0;
+    margin: 0;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+  }
+  .navbar__container .social__container i {
+    color: white;
+  }
+  .navbar__container .close-btn {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .navbar__container li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .navbar__container--links {
+    color: #093d6a;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #EA0F07;
+}
+
+.show-side-bar {
+  left: 30%;
+}
+
+/*Hero_content section*/
+.hero__content {
+  /*
+ background-image: url(/imgs/hero-bg.webp);
+ background-size:cover;
+ */
+  background: #00B0EE;
+  z-index: -1000;
+}
+
+.hero__content .hero__container .hero__content--right img {
+  border: 5px solid white;
+}
+
+.hero__content .hero__container h1 {
+  font-size: clamp(1.3rem, 2.7rem, 3.125rem);
+  color: #E90F07;
+  line-height: 1;
+  font-family: 'Fredoka One', cursive;
+}
+
+.hero__content .hero__container h1 span {
+  text-transform: uppercase;
+}
+
+.hero__content .hero__container p {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/*Description Style*/
+.description__container-left h2 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-family: 'Fredoka One', cursive;
+}
+
+.description__container-left p {
+  margin-bottom: 1rem;
+}
+
+.description__container-right img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #1F8EED;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .description__container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.description {
+  margin: 2rem auto;
+}
+
+/*Galery Style*/
+.galery {
+  margin-top: 0;
+  background: #ED2D31;
+}
+
+.galery h2 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.galery__content {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: .5rem;
+}
+
+.galery__content .galery-img {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .galery__content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .galery__content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.galery svg {
+  background: white;
+  display: block;
+}
+
+/*Videos*/
+.video h2 {
+  margin: 1rem 0;
+}
+
+.video .video__content {
+  grid-gap: 1rem;
+}
+
+.video .video__content .video-dep {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .video .video__content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+/*parceiros*/
+.parceiros h2 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.parceiros .parceiros__content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.parceiros .parceiros__content img {
+  display: block;
+  width: 14%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.parceiros .parceiros__content img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .parceiros .parceiros__content img {
+    width: 14%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+/*Contact Style*/
+.contact__content {
+  padding-top: 3rem;
+}
+
+.contact__content .social__container {
+  margin: .5rem 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contact__content .social__container i {
+  color: white;
+}
+
+.contact__content .social__container a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-left: .5rem;
+}
+
+.contact__content .social__container .fa-youtube:hover {
+  color: red;
+}
+
+.contact__content .social__container .fa-instagram:hover {
+  color: #f09433;
+}
+
+.contact__content .social__container .fa-facebook:hover {
+  color: #1877F2;
+}
+
+.contact__content .contact__container {
+  max-width: 740px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: #1F8EED;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: .75fr 1fr;
+      grid-template-columns: .75fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__content .contact__container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.contact__content .contact__container--left {
+  color: white;
+  line-height: 1.5;
+  font-weight: light;
+}
+
+.contact__content .contact__container--title {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.contact__content .contact__container form p {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact__content .contact__container form input {
+  outline: none;
+  color: white;
+}
+
+.contact__content .contact__container form input[type="text"], .contact__content .contact__container form input[type="email"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: .5rem 1rem;
+  -webkit-transition: border .3s ease;
+  transition: border .3s ease;
+  font-size: 1.025rem;
+}
+
+.contact__content .contact__container form input[type="text"]::-webkit-input-placeholder, .contact__content .contact__container form input[type="email"]::-webkit-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form input[type="text"]:-ms-input-placeholder, .contact__content .contact__container form input[type="email"]:-ms-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form input[type="text"]::-ms-input-placeholder, .contact__content .contact__container form input[type="email"]::-ms-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form input[type="text"]::placeholder, .contact__content .contact__container form input[type="email"]::placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form input[type="text"]:hover, .contact__content .contact__container form input[type="text"]:focus, .contact__content .contact__container form input[type="email"]:hover, .contact__content .contact__container form input[type="email"]:focus {
+  outline: 1px solid white;
+}
+
+.contact__content .contact__container form textarea {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  display: block;
+  width: 100%;
+  padding: .5rem 1rem;
+  font-size: 1.025rem;
+}
+
+.contact__content .contact__container form textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form textarea:-ms-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form textarea::-ms-input-placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form textarea::placeholder {
+  color: white;
+}
+
+.contact__content .contact__container form textarea:hover, .contact__content .contact__container form textarea:focus {
+  outline: 1px solid white;
+}
+
+.contact__content .contact__container form .contact-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  display: block;
+  padding: .5rem 1rem;
+  font-size: 1.025rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-color: #FFFF00;
+  border-width: 2px;
+}
+
+.contact__content .contact__container form .contact-btn:focus, .contact__content .contact__container form .contact-btn:hover {
+  background: #FFFF00;
+  color: #1F8EED;
+}
+
+/*footer*/
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  color: #1F8EED;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  background: #093d6a;
+}
+/*# sourceMappingURL=style.css.map */
