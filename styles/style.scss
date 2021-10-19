@@ -107,13 +107,20 @@ header{
         }
         .cambridge-logo{
             margin-left:2rem;
-            max-width:169px;
+            max-width:200px;
             height:auto;
             object-fit:cover;
         }
 
-        @include mobile{
+        @include tablet{
             flex-direction:column;
+            
+            .cambridge-logo{
+                margin-top:1rem;
+            }
+            .kids-logo{
+                max-width:150px;
+            }
         }
     }
     @extend %flex-jc-sb;
@@ -185,27 +192,27 @@ header{
 }
 /*Hero_content section*/
 .hero__content{
-    /*
- background-image: url(/imgs/hero-bg.webp);
- background-size:cover;
- */
  background:#00B0EE;
  z-index: -1000;
  .hero__container{
-     /*
+    
     .hero__content--right{
         img{
-           
+           width:100%;
         }
-    }*/
-
+    }
+    
     @extend %flex-center; 
+
+    @include tablet{
+        flex-direction:column;
+    }
 
     h1{
         font-size: clamp(1.3rem,2.7rem,3.125rem);
         color:$redText;
         line-height:1;
-        font-family: 'Fredoka One', cursive;
+        font-family: 'Roboto', cursive;
    
         span{
             text-transform: uppercase;
@@ -216,8 +223,6 @@ header{
        font-weight: 300;
    }
 }
- 
-
 }
 
 /*Description Style*/
